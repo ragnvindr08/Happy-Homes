@@ -1,0 +1,183 @@
+/* General page styling */
+.visitor-page {
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f9fafb;
+  font-family: Arial, sans-serif;
+}
+
+.visitor-page h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Messages */
+.message {
+  text-align: center;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.message.success {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* Form styling */
+.visitor-form {
+  max-width: 400px;
+  margin: 0 auto 30px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.visitor-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.visitor-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.visitor-form .submit,
+.visitor-form .check {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+  border: none;
+}
+
+.visitor-form .submit {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.visitor-form .submit:hover {
+  background-color: #2563eb;
+}
+
+.visitor-form .check {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.visitor-form .check:hover {
+  background-color: #059669;
+}
+
+/* Visitor status cards */
+.visitor-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.visitor-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Time In / Out button */
+.time-btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.time-btn.time-in {
+  background-color: #3b82f6;
+}
+
+.time-btn.time-in:hover {
+  background-color: #2563eb;
+}
+
+.time-btn.time-out {
+  background-color: #ef4444;
+}
+
+.time-btn.time-out:hover {
+  background-color: #b91c1c;
+}
+
+/* Status text */
+.status {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status.approved {
+  color: #16a34a;
+}
+
+.status.declined {
+  color: #dc2626;
+}
+
+.status.pending {
+  color: #f59e0b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .visitor-form {
+    padding: 30px; /* reduced padding */
+    box-sizing: border-box;
+  }
+
+  .visitor-card {
+    padding: 15px; /* smaller padding */
+    margin: 5px 0; /* reduce vertical spacing */
+    box-sizing: border-box;
+  }
+
+  .time-btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .visitor-status {
+    padding: 0 10px; /* prevent horizontal overflow */
+  }
+}

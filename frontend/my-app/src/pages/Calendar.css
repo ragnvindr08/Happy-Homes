@@ -1,0 +1,221 @@
+/* Main container */
+.calendar-container {
+  padding: 20px;
+  max-width: 100%; /* full width on mobile */
+  width: 1500px;   /* desktop max width */
+  margin: 20px auto;
+  background-color: #f4f7f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.calendar-flex {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.calendar-wrapper {
+  flex: 2;
+  min-width: 300px; /* reduced min-width for mobile */
+  width: 100%;
+}
+
+.appointments-list {
+  flex: 1;
+  min-width: 250px; /* reduced for mobile */
+  max-height: 600px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.calendar-container h2 {
+  text-align: center;
+  color: #2e6F40;
+  margin-bottom: 20px;
+}
+
+/* Booking form card */
+.booking-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Inputs & select */
+.booking-form select,
+.booking-form input[type="date"],
+.booking-form input[type="time"],
+.booking-form button {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 100px; /* flexible for mobile */
+  flex: 1 1 120px;  /* allow shrinking */
+  box-sizing: border-box;
+}
+
+/* Book button */
+.booking-form button {
+  background-color: #2e6F40;
+  color: white;
+  border: none;
+  cursor: pointer;
+  flex: 1 1 100px;
+}
+
+.booking-form button:hover {
+  background-color: #276334;
+}
+
+/* Calendar */
+.rbc-calendar {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Calendar events */
+.rbc-event {
+  background-color: #2e6F40 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 2px 4px !important;
+  font-size: 0.9rem !important;
+}
+
+/* Agenda View */
+.rbc-agenda-table th,
+.rbc-agenda-table td {
+  border: 1px solid black;
+  color: #000;
+  background-color: #fff;
+}
+
+.rbc-agenda-table th {
+  background-color: #f0f0f0;
+}
+
+/* Week and Day View */
+.rbc-time-view .rbc-time-content table,
+.rbc-time-view .rbc-time-content td,
+.rbc-time-view .rbc-time-content th {
+  border: 1px solid black;
+}
+
+/* Delete button */
+.delete-btn {
+  margin-left: 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 5px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Scrollable Date Row */
+.calendar-wrapper .dates-row {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 6px 0;
+  margin-bottom: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Scrollable buttons */
+.calendar-wrapper .dates-row button {
+  min-width: 30px;        /* smaller default */
+  padding: 6px 8px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  flex-shrink: 0;          /* prevent shrinking too small */
+  white-space: nowrap;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .calendar-flex {
+    flex-direction: column;
+  }
+
+  .appointments-list {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .calendar-wrapper {
+    width: 100%;
+    min-width: 0; /* allow shrinking fully */
+  }
+
+  .calendar-wrapper .rbc-calendar {
+    height: 400px !important;
+  }
+
+  .booking-form {
+    flex-direction: column;
+  }
+
+  .booking-form select,
+  .booking-form input,
+  .booking-form button {
+    width: 100%;
+  }
+
+  .appointments-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  /* Scrollable buttons mobile */
+  .calendar-wrapper .dates-row button {
+    min-width: 28px;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .calendar-wrapper .dates-row {
+    gap: 4px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .calendar-wrapper .rbc-calendar {
+    height: 350px !important;
+  }
+
+  .booking-form input,
+  .booking-form select,
+  .booking-form button {
+    font-size: 12px;
+    padding: 6px;
+  }
+}

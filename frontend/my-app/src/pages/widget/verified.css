@@ -1,0 +1,56 @@
+/* Fullscreen center layout for Verified Page */
+.verified-container {
+  min-height: 100vh; /* Full height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center;     /* Horizontal center */
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+/* Card-like verified content */
+.verified-info, .homeowner-info {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.verified-title {
+  font-size: 28px;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.homeowner-title {
+  font-size: 20px;
+  color: #155724;
+  margin-bottom: 12px;
+}
+
+.homeowner-info p {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #333;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .verified-info, .homeowner-info {
+    padding: 20px 15px;
+  }
+
+  .verified-title {
+    font-size: 24px;
+  }
+
+  .homeowner-title {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,449 @@
+
+
+.admin-dashboard-container {
+  padding: 20px;
+  max-width: 1200px; /* ✅ keeps layout centered on large screens */
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(44, 124, 75);
+  font-size: clamp(1.25rem, 3vw, 2rem); /* responsive title */
+}
+
+.toggle-graph-btn {
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background-color: rgb(44, 124, 75);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-graph-btn:hover {
+  background-color: #2b2b2d;
+}
+
+.dashboard-flex {
+  background-color: #f5f5f5;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 10px;
+ 
+}
+
+.dashboard-flex.graph-visible .dashboard-graph {
+  flex: 1 1 25%;
+  min-width: 260px;
+}
+
+.dashboard-flex.graph-visible .dashboard-table {
+  flex: 1 1 70%;
+  min-width: 320px;
+}
+
+.dashboard-graph {
+  transition: all 0.3s ease;
+}
+
+.dashboard-table {
+  flex: 1 1 100%;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-users-table td,
+.admin-users-table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.profile-thumb,
+.profile-thumb-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  margin: 0 auto;
+  background-color: #ccc;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+}
+
+.total-users {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
+  margin-top: 10px;
+}
+
+.admin-row {
+  background-color: #18ba5173;
+  color: #000000;
+}
+
+.admin-row:hover {
+  background-color: #37814a;
+  color: #fff;
+}
+
+/* ✅ Responsive adjustments */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .dashboard-flex.graph-visible {
+    flex-direction: column;
+  }
+
+  .dashboard-flex.graph-visible .dashboard-graph,
+  .dashboard-flex.graph-visible .dashboard-table {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .total-users {
+    font-size: 0.9rem;
+  }
+
+  .toggle-graph-btn {
+    width: 100%; /* full-width button for small screens */
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .profile-thumb,
+  .profile-thumb-placeholder {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .admin-users-table th,
+  .admin-users-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+  }
+
+  .total-users {
+    font-size: 0.8rem;
+  }
+}
+
+/* 🔍 Search bar container */
+.search-container {
+  margin: 15px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Input field style */
+.search-input {
+  width: 300px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.search-input:focus {
+  border-color: rgb(46, 111, 64);
+  box-shadow: 0 0 5px rgba(46, 111, 64, 0.3);
+}
+
+/* Optional: make it responsive */
+@media (max-width: 768px) {
+  .search-input {
+    width: 100%;
+  }
+}
+
+.dashboard-sidebar {
+  width: 250px;
+  background: #222;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    display: none;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* --- Modal Content --- */
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  width: 600px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* --- Close Button --- */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none!important;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: rgb(167, 70, 70);
+}
+
+/* --- Modal Body (Image / PDF) --- */
+.modal-body {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body img,
+.modal-body iframe {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 4px;
+}
+
+/* --- Modal Navigation Controls --- */
+.modal-controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-controls button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(46, 111, 64);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-controls button:hover {
+  background-color: rgb(35, 85, 50);
+}
+
+/* --- Keyframe for fade-in --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Optional: For responsive smaller screens --- */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-controls button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* space between buttons */
+  flex-wrap: wrap; /* allows buttons to wrap on small screens */
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.modal-buttons button:first-child {
+  background-color: rgb(46, 111, 64); /* Save */
+  color: white;
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: rgb(36, 91, 54);
+}
+
+.modal-buttons button:last-child {
+  background-color: #ccc; /* Cancel */
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #aaa;
+}
+
+/* Make buttons full-width on smaller screens */
+@media (max-width: 600px) {
+  .modal-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+}
+
+.edit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px; /* small padding for mobile */
+  overflow-y: auto; /* scroll if content is too tall */
+}
+
+/* Edit Modal Box */
+.edit-modal {
+  background: white;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%; /* responsive width */
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs inside modal */
+.edit-modal input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.modal-buttons button:first-child {
+  background-color: rgb(46, 111, 64); /* Save */
+  color: white;
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: rgb(36, 91, 54);
+}
+
+.modal-buttons button:last-child {
+  background-color: #ccc; /* Cancel */
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #aaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .edit-modal {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+}

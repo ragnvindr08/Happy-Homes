@@ -1,0 +1,96 @@
+.resident-dashboard {
+  min-height: 80vh;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column; /* stack content vertically */
+  justify-content: center; /* vertical centering if needed */
+  align-items: center; /* horizontal centering */
+  padding: 2rem;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px; /* restrict max width */
+  text-align: center;
+}
+
+.visitor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.visitor-card {
+  background-color: #ffffff;
+  padding: 2rem; /* more padding */
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.visitor-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.status.approved { color: #16a34a; }
+.status.declined { color: #dc2626; }
+.status.pending { color: #ca8a04; }
+
+.message.error {
+  color: #dc2626;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.message.success {
+  color: #16a34a;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+button.bg-green-500 { background-color: #16a34a; }
+button.bg-green-500:hover { background-color: #15803d; }
+
+button.bg-red-500 { background-color: #dc2626; }
+button.bg-red-500:hover { background-color: #b91c1c; }
+
+button.bg-gray-500 { background-color: #6b7280; }
+button.bg-gray-500:hover { background-color: #4b5563; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .resident-dashboard {
+    padding: 15px;
+  }
+
+  .visitor-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resident-dashboard {
+    padding: 10px;
+  }
+
+  .visitor-card {
+    padding: 15px;
+  }
+
+  .visitor-cards {
+    grid-template-columns: 1fr;
+  }
+}

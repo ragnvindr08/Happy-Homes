@@ -1,0 +1,88 @@
+.verification-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+h2 {
+  color: #2C3E50;
+  margin-bottom: 15px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, 
+.user-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f0f0f0;
+  color: #2C3E50;
+}
+
+.user-table a {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+.user-table a:hover {
+  text-decoration: underline;
+}
+
+.action-buttons {
+  margin-left: -50px;
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.accept-btn {
+  background-color: #27AE60;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.accept-btn:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.reject-btn {
+  
+  background-color: #E74C3C;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background-color: #C0392B;
+}
+
+.accept-btn:disabled,
+.reject-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+}

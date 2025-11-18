@@ -1,0 +1,384 @@
+/* Container for the profile page */
+.profile-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Profile title */
+.profile-container h2 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+/* Profile details view */
+.profile-details p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: #333;
+}
+
+/* Edit button */
+.profile-details button {
+  display: block;
+  margin: 20px auto 0 auto;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-details button:hover {
+  background-color: #27632a;
+}
+
+/* Profile preview image */
+.profile-details img.profile-preview,
+.cropped-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #2e7d32;
+}
+
+/* Edit form */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Input fields */
+.profile-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* Save & cancel buttons */
+.profile-form button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.profile-form button:first-of-type {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.profile-form button:first-of-type:hover {
+  background-color: #27632a;
+}
+
+.profile-form button:last-of-type {
+  background-color: #ccc;
+}
+
+.profile-form button:last-of-type:hover {
+  background-color: #b3b3b3;
+}
+
+/* Cropper container */
+.cropper-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #333;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Cropped image preview */
+.cropped-preview {
+  margin: 15px 0;
+}
+
+.cropped-preview img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2e7d32;
+}
+
+/* Button wrapper for actions */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .profile-details img.profile-preview,
+  .cropped-preview img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cropper-container {
+    height: 220px;
+  }
+}
+
+.contact-input-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.flag-icon {
+  width: 24px;
+  height: auto;
+  margin-right: 2px;
+  margin-bottom: -10px;
+  
+}
+
+.contact-display {
+  display: inline-flex;
+  align-items: center;
+  margin-left: -5px;
+/* space between flag and number */
+}
+
+.change-password-form {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.change-password-form h3 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #444;
+}
+
+.change-password-form button {
+  width: 100%;
+  background-color: #2196F3;
+  color: white;
+  font-weight: bold;
+}
+
+ input[type="file"] {
+  display: none; /* hide the default input */
+}
+
+/* Custom file upload button */
+.custom-file-label {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.custom-file-label:hover {
+  background-color: #27632a;
+}
+
+/* Wrapper for file inputs */
+.file-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* File name display */
+.file-name {
+  font-size: 14px;
+  color: #333;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+/* Verification upload section */
+.verification-upload {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.verification-upload label {
+  display: block;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+/* Upload button */
+.verification-upload button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.verification-upload button:hover {
+  background-color: #27632a;
+}
+
+/* Responsive: stack and resize on small screens */
+@media (max-width: 600px) {
+  .custom-file-label {
+    width: 100%;
+    text-align: center;
+  }
+  .verification-upload {
+    padding: 12px;
+  }
+  .file-name {
+    font-size: 13px;
+  }
+} 
+
+
+.doc-verify {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(23, 43, 77, 0.06);
+
+  display: flex;
+  flex-direction: column; /* centers image above text */
+  align-items: center;
+  text-align: justify;
+  gap: 15px; /* space between image and text */
+
+  font-size: 13px;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+.doc-verify img.doc-icon {
+  width: 70px;        /* adjust size */
+  height: auto;
+  display: block;
+  margin: 0 auto;     /* fully center */
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .doc-verify {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .doc-verify img.doc-icon {
+    width: 75px;
+  }
+}
+
+.billing-upload {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fdfdfd;
+}
+
+.billing-upload label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.billing-upload .doc-verify {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.upload-btn {
+  padding: 6px 12px;
+  margin-right: 10px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-btn.submit {
+  background: #2196F3;
+}
+
+.upload-btn:hover {
+  opacity: 0.9;
+}
+
+.file-name {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.billing-records {
+  margin-top: 15px;
+}
+
+.billing-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.billing-item {
+  width: 120px;
+  text-align: center;
+}
+
+.billing-item img.billing-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

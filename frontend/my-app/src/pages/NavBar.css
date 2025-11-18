@@ -1,0 +1,337 @@
+/* Base Navbar Styles (Your Existing Code) */
+.icon {
+  width: 35px;
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+  filter: brightness(0) saturate(100%) invert(40%) sepia(80%) saturate(600%) hue-rotate(90deg) brightness(90%) contrast(90%);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: auto;
+  background-color: #2b2b2b; /* Dark green */
+  color: rgb(255, 255, 255);
+  z-index: 9999;
+  padding: 25px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', 'Lato', 'Montserrat', sans-serif;
+}
+
+.navbar-content {
+  /* max-width: 1200px; */
+  max-width: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.navbar-logo {
+  margin-left: 10px;   /* pushes the logo container 10px from left */
+  flex-shrink: 0;      /* prevent shrinking if navbar shrinks */
+}
+
+.logo-image {
+  display: block;      /* removes extra bottom space from inline image */
+  height: 80px;
+  width: auto;
+  margin-top: -20px;
+  margin-bottom: -30px;
+  /* margin-left: -100px; */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  position: relative; /* Required for dropdown positioning */
+}
+
+.navbar-links li:hover {
+  background-color: rgb(255, 255, 255);
+  color: green;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* below the parent li */
+  left: 0;
+  background-color: #feffff;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  min-width: 160px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.dropdown-menu li:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #181717;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.notification-bell {
+  position: relative;
+}
+
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #ffffff;
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.notif-item {
+  font-size: 12px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.notif-item:hover {
+  background-color: #f5f5f5;
+}
+
+.notif-empty {
+  padding: 10px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .notification-dropdown {
+    width: 200px;
+  }
+}
+
+/* Responsive Dropdown */
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .navbar-links li {
+    padding-left: 5px;
+  }
+
+  /* Make dropdown open under its parent in vertical mode */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+  }
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+  margin-top: -20px;
+  margin-bottom: -30px;
+}
+
+
+.navbar-profile {
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+  align-self: center;
+  padding-right: 15px;
+  white-space: nowrap;
+}
+
+
+
+
+/* ✅ 1️⃣  New hamburger button styling */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: white;
+  margin-top: -15px;
+}
+
+/* ✅ 2️⃣  Responsive layout for mobile */
+@media (max-width: 768px) {
+  /* Show the hamburger icon on small screens */
+  .hamburger {
+    display: block;
+  }
+
+.navbar-logo {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically */
+  width: 100%;             /* ensures full navbar width for centering */
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: -30px;
+}
+
+  .navbar {
+  position: sticky;
+  top: 0;
+  width: auto;
+  background-color: #2b2b2b; /* Dark green */
+  color: rgb(255, 255, 255);
+  z-index: 9999;
+  padding: 1px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Open Sans', 'Lato', 'Montserrat', sans-serif;
+}
+
+  /* Stack content vertically */
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Collapsible menu hidden by default */
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    transition: max-height 0.3s ease;
+  }
+
+  /* When menu is active (hamburger clicked) */
+  .navbar-links.active {
+    max-height: 400px; /* expands */
+    padding-top: 10px;
+  }
+
+  /* Full-width menu items */
+  .navbar-links li {
+    width: 100%;
+  }
+
+  /* Adjust dropdown inside mobile menu */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: #3a3a3a;
+  }
+
+  .dropdown-menu li {
+    color: white;
+  }
+
+  .dropdown-menu li:hover {
+    background-color: #4a4a4a;
+  }
+
+  /* Keep right side (notifications + profile) visible */
+  .navbar-right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notification-bell {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-links li.visitor {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .visitor-icon {
+    display: inline-block !important;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+}
+
+/* Optional: adjust icon spacing */
+.icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 6px;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+

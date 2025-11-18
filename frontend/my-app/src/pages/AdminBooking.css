@@ -1,0 +1,217 @@
+/* AdminBooking.css */
+
+/* Container styling */
+.admin-booking-container {
+  max-width: 1300px;
+  margin: 10px auto;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+.conflict-row {
+  background-color: #ffe0e0; /* light red */
+}
+
+.admin-booking-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: green;
+  font-size: 1.8rem;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table styling */
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1300px;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+.booking-table th {
+  background-color: rgb(44, 124, 75);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Row hover effect */
+.booking-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Buttons */
+.approve-btn,
+.reject-btn {
+  margin-left: 10px;
+  margin-right: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.approve-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: #45a049;
+}
+
+.reject-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Status text colors */
+.booking-table td em {
+  color: #888;
+}
+
+/* Date filter */
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.date-filter label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.date-filter input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.clear-btn {
+  background-color: #ccc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.clear-btn:hover {
+  background-color: #b3b3b3;
+}
+
+/* 🌐 Responsive Styles */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .admin-booking-container {
+    padding: 40px 15px;
+  }
+
+  .booking-table th,
+  .booking-table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile (portrait) */
+@media (max-width: 768px) {
+  .admin-booking-container {
+    padding: 30px 10px;
+  }
+
+  .booking-table {
+    min-width: unset;
+    font-size: 0.85rem;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .approve-btn,
+  .reject-btn {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .date-filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .date-filter label {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .date-filter input[type="date"],
+  .clear-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .clear-btn {
+    margin-top: 6px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .admin-booking-container {
+    padding: 20px 8px;
+  }
+
+  .booking-table th,
+  .booking-table td {
+    font-size: 0.8rem;
+    padding: 8px 6px;
+  }
+
+  .date-filter label,
+  .date-filter input[type="date"],
+  .clear-btn {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}

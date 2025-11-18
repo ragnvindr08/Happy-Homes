@@ -1,0 +1,165 @@
+/* Container */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 15px; /* ✅ spacing for small screens */
+  box-sizing: border-box;
+}
+
+/* Box */
+.register-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+/* Inputs */
+.register-input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.register-input:focus {
+  outline: none;
+  border-color: #2e7d32;
+}
+
+/* Buttons */
+.register-button,
+.login-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-button {
+  background-color: #2e7d32;
+  color: white;
+}
+.register-button:hover {
+  background-color: #27642b;
+}
+
+.login-button {
+  background-color: #444;
+  color: white;
+}
+.login-button:hover {
+  background-color: #333;
+}
+
+/* ✅ Contact Number */
+.contact-number-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+}
+
+.flag-icon {
+  width: 28px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.prefix {
+  font-size: 15px;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.contact-input-wrapper {
+  flex: 1;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 3px rgba(46, 125, 50, 0.5);
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE BREAKPOINTS */
+/* ========================= */
+
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .register-box {
+    padding: 25px;
+  }
+  .register-input,
+  .contact-input {
+    font-size: 15px;
+    padding: 12px;
+  }
+  .flag-icon {
+    width: 24px;
+  }
+  .prefix {
+    font-size: 14px;
+  }
+}
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+  .register-box {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .register-input,
+  .contact-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .register-button,
+  .login-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .flag-icon {
+    width: 20px;
+  }
+  .prefix {
+    font-size: 12px;
+  }
+}
+
+.verify-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.verify-button:hover {
+  background-color: #45a049;
+}

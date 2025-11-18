@@ -1,0 +1,97 @@
+.activity-log-container {
+  padding: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  font-family: Arial, sans-serif;
+}
+
+.activity-log-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.activity-log-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.activity-log-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.activity-log-table th,
+.activity-log-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.activity-log-table th {
+  background-color: #f2f2f2;
+}
+
+.activity-log-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+@media (max-width: 768px) {
+  .activity-log-table {
+    display: block;
+  }
+
+  .activity-log-table thead,
+  .activity-log-table tbody,
+  .activity-log-table th,
+  .activity-log-table td,
+  .activity-log-table tr {
+    display: block;
+  }
+
+  .activity-log-table th {
+    display: none; /* hide table headers on small screens */
+  }
+
+  .activity-log-table td {
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .activity-log-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 0.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.activity-log-table-container {
+  overflow-x: auto;
+}
+
+.activity-log-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activity-log-table th, .activity-log-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.activity-log-table th {
+  background-color: #f4f4f4;
+}

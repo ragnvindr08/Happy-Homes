@@ -1,0 +1,589 @@
+/* ====== Base Styles ====== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ====== Title ====== */
+.map-title {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #2e6F40; /* Dark green */
+}
+
+/* ====== Page Container: Layout for sidebar(s) and map ====== */
+.map-page-container {
+  display: flex;              /* Flex layout - horizontal by default */
+  gap: 20px;                 /* Spacing between flex children */
+  max-width: 1800px;          /* Max width for large screens - increased for wider map */
+  width: 100%;                /* Full width up to max-width */
+  margin: 20px auto;          /* Center horizontally with vertical spacing */
+  padding: 0 20px;            /* Left and right padding */
+  align-items: flex-start;    /* Align children to top */
+}
+
+/* ====== Sidebar: Pins List ====== */
+.pins-sidebar {
+  flex: 0 0 280px;            /* Fixed width: 280px, no grow/shrink */
+  background-color: #f5f5f5;  /* Light gray background */
+  border-radius: 10px;        /* Rounded corners */
+  padding: 15px;              /* Inner spacing */
+  box-shadow: 0 0 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  max-height: 600px;          /* Fixed max height */
+  overflow-y: auto;           /* Scroll if content exceeds height */
+}
+
+.pins-sidebar h2 {
+  margin-top: 0;              /* Remove top margin */
+  color: #2e6F40;             /* Dark green */
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Individual pin items styling */
+.pin-item {
+  padding: 8px;
+  border-bottom: 1px solid #ddd; /* Light border between items */
+  font-size: 14px;
+}
+
+.pin-item:last-child {
+  border-bottom: none;        /* No border after last item */
+}
+
+/* Pin actions container */
+.pin-actions {
+  margin-top: 6px;
+}
+
+/* Buttons inside pin actions */
+.pin-actions button {
+  margin-right: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #2e6F40; /* Dark green */
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pin-actions button:hover {
+  background-color: #24572b;  /* Darker green on hover */
+}
+
+/* ====== Map Container ====== */
+.map-wrapper {
+  flex: 1;
+  height: 700px;
+  min-width: 600px;
+  border-radius: 10px;
+  border: 1px solid #2b2b2b;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  position: relative;
+}
+
+.map-wrapper:hover {
+  transform: scale(1.1); /* zoom 10% bigger */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+/* ====== Leaflet Specific Styles ====== */
+.leaflet-control-geosearch {
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+.leaflet-control-geosearch form {
+  font-size: 14px;
+}
+
+/* Remove default background from Leaflet container */
+.leaflet-container {
+  background: none !important;
+}
+
+/* Tile styling for crisp rendering */
+.leaflet-tile {
+  image-rendering: pixelated;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* ====== Sidebar: Pie Chart Container ====== */
+.chartsidebar {
+  flex: 0 0 300px;            /* Fixed width: 280px */
+  padding: 0;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  max-height: 600px;
+
+  
+}
+
+.chartsidebar h2 {
+  padding: 5px;
+  color: #2e6F40;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5px;
+}
+
+.chartsidebar {
+  padding: 5px;
+  color: #2e6F40;
+  font-weight: bold;
+  font-size: 10px;
+  margin: 5px;
+}
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  /* Make pie chart sidebar full width and height auto on smaller screens */
+  .pie-chart-sidebar {
+    flex: none;            /* Remove flex basis */
+    width: 100%;           /* Full width */
+    max-height: none;      /* Remove max height restriction */
+    margin-top: 20px;      /* Add spacing from above */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack main container vertically */
+  .map-page-container {
+    flex-direction: column;
+  }
+
+  /* Pins sidebar full width */
+  .pins-sidebar {
+    width: 100%;
+    max-height: none;
+  }
+
+  /* Map container smaller height and full width */
+  .map-wrapper {
+    height: 400px;
+    width: 100%;
+  }
+}
+
+.pin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap; /* allows buttons to wrap on small screens */
+}
+
+.pin-actions button {
+  flex: 1 1 100px; /* grow/shrink, minimum width 100px */
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #2e6F40;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.pin-actions button:hover {
+  background-color: #24572b;
+}
+
+.maplibre-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.custom-marker {
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+/* Court marker styling */
+.court-marker {
+  filter: hue-rotate(120deg) saturate(1.5) brightness(1.2); /* Orange/basketball color */
+}
+
+/* Pool marker styling */
+.pool-marker {
+  filter: hue-rotate(200deg) saturate(1.5) brightness(1.1); /* Blue/water color */
+}
+
+@media (max-width: 480px) {
+  .pin-actions button {
+    flex: 1 1 45%; /* roughly two buttons per row on small screens */
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}
+
+/* ====== Pin Form Modal Styles ====== */
+.pin-form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000; /* ensure above Leaflet controls and tiles */
+  pointer-events: auto;
+  /* Ensure modal is scrollable */
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pin-form-content {
+  background: white;
+  padding: 50px; /* tighter padding while keeping bottom scroll space */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 1000px;
+  width: min(92%, 460px);
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Ensure smooth scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
+  /* Make scrollbar more visible */
+  scrollbar-width: thin;
+  scrollbar-color: #2e6F40 #f0f0f0;
+}
+
+/* Webkit scrollbar styling for Chrome/Safari */
+.pin-form-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pin-form-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.pin-form-content::-webkit-scrollbar-thumb {
+  background: #2e6F40;
+  border-radius: 4px;
+}
+
+.pin-form-content::-webkit-scrollbar-thumb:hover {
+  background: #24572b;
+}
+
+.pin-form-content h3 {
+  margin-top: 0;
+  color: #2e6F40;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pin-form-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.pin-form-content input,
+.pin-form-content textarea,
+.pin-form-content select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.pin-form-content textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.form-buttons button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #2e6F40;
+  color: white;
+}
+
+.form-buttons button[type="submit"]:hover {
+  background-color: #24572b;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+.form-buttons button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+/* ====== Pin Placement Instructions ====== */
+.pin-placement-instructions {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(46, 111, 64, 0.9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pin-placement-instructions strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pin-placement-instructions small {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ====== Coordinates Display ====== */
+.coords-display {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid #2e6F40;
+}
+
+.coords-display strong {
+  color: #2e6F40;
+}
+
+/* ====== Enhanced Popup Styles ====== */
+.leaflet-popup-content-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 16px 18px;
+  line-height: 1.5;
+  min-width: 240px;
+  max-width: 280px;
+  color: #2b2b2b;
+}
+
+/* Google Maps-like popup styling */
+.google-map-popup .leaflet-popup-content-wrapper {
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.google-map-popup .leaflet-popup-content {
+  padding: 10px;
+  margin: 0;
+  min-width: 280px;
+  max-width: 320px;
+}
+
+.google-map-popup .leaflet-popup-close-button {
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 18px;
+  color: #666;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.google-map-popup .leaflet-popup-close-button:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #1a1a1a;
+  transform: scale(1.1);
+}
+
+.google-map-popup .leaflet-popup-tip {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup-close-button {
+  top: 12px;
+  right: 12px;
+  color: #2e6F40;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ====== User Map Page Styles ====== */
+.user-map-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.facility-info-panel {
+  margin-top: 20px;
+}
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 768px) {
+  .user-map-container {
+    padding: 10px;
+  }
+  
+  .facility-info-panel {
+    padding: 15px !important;
+  }
+  
+  .facility-info-panel h3 {
+    font-size: 18px;
+  }
+  
+  .facility-info-panel > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pin-form-content {
+    padding: 20px 20px 28px 20px;
+    width: min(94%, 440px);
+  }
+
+  .pin-placement-instructions {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .coords-display {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-title {
+    font-size: 20px;
+  }
+  
+  .map-title img {
+    width: 30px !important;
+  }
+  
+  .facility-info-panel {
+    padding: 10px !important;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons button {
+    margin-bottom: 10px;
+  }
+
+  .pin-form-content {
+    padding: 16px 16px 26px 16px;
+    width: min(94%, 420px);
+  }
+}
+
+/* Map wrapper */
+.map-wrapper {
+  height: 70vh;
+  max-width: auto;
+  margin: 20px auto;
+  border: 1px solid #2b2b2b;
+  border-radius: 10px;
+}
+
+/* Map title */
+.map-title {
+  text-align: center;
+  font-size: 24px;
+  color: #2e6f40;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full-screen map on mobile */
+@media (max-width: 768px) {
+
+
+  .map-wrapper {
+    height: calc(100vh - 80px); /* Full height minus navbar & title */
+    margin: 0;
+    border-radius: 0;
+    border: none;
+  }
+
+  .map-title {
+    font-size: 20px;
+    flex-direction: column;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-wrapper {
+    height: calc(100vh - 60px);
+  }
+
+  .map-title {
+    font-size: 18px;
+  }
+}

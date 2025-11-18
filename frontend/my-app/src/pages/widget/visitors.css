@@ -1,0 +1,162 @@
+/* Center and layout wrapper */
+.visitors-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  padding: 1rem;
+  background: #f0f2f5;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Visitor Form */
+.visitor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto; /* top 0, bottom 20px spacing */
+  max-width: 150px;
+  width: 30vw;
+  height: auto;
+}
+
+.visitor-input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.visitor-input:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+.visitor-button {
+  padding: 0.85rem;
+  font-size: 1.1rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.visitor-button:hover {
+  background-color: #1e7e34;
+}
+
+/* PIN Inputs container */
+.pin-inputs {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Each PIN box */
+.pin-input {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.pin-input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px #28a745;
+}
+
+@media (max-width: 480px) {
+  .pin-input {
+    width: 2.4rem;
+    height: 2.8rem;
+    font-size: 1.5rem;
+  }
+}
+
+.pin-label {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.0rem;
+  color: #333;
+}
+
+/* Verified Page */
+.verified-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.verified-title {
+  margin: 0;
+  font-size: 2rem;
+  color: #28a745;
+}
+
+.homeowner-info {
+  background: #e9ecef;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.homeowner-title {
+  margin-top: 0;
+  font-weight: 600;
+  color: #343a40;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+  .verified-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .verified-info,
+  .homeowner-info {
+    flex: 1;
+  }
+
+  .visitor-form {
+    max-width: 500px;
+  }
+}

@@ -1,0 +1,220 @@
+
+
+/* Main page container */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px 120px 10px 45px; /* left padding: 45px for icon + spacing */
+  font-size: 16px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  background: #fafafa;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Optional: style placeholder directly */
+.input-group input::placeholder {
+  color: #888; /* optional: adjust placeholder color */
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+/* Adjust position of password toggle */
+.toggle-password-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  
+}
+
+/* Two-column container */
+.login-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  
+  /* border-radius: 10px; */
+  overflow: hidden;
+  /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.123); */
+}
+
+/* Left side: image or branding */
+.login-image {
+  flex: 1;
+  background-image: url('../images/house123.png');
+  background-size: auto calc( 70% + 1px); /* make background 5px taller */
+  background-position: center -5px;       /* shift image 5px up */
+  background-repeat: no-repeat;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+/* Right side: login form */
+.login-form {
+  flex: 1;
+  padding: 30px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Logo */
+.login-form .logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.login-form input {
+  margin-bottom: 5px;
+  width: 95%;
+  padding: 10px 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fafafa;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #a8a8a8;
+}
+
+/* Buttons */
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e7d32;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-form button:hover {
+  background-color: #325e34;
+}
+
+.register-btn {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  color: #262626;
+}
+
+.register-btn:hover {
+  background-color: #fafafa;
+}
+
+/* Password toggle */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  padding-right: 36px;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #8e8e8e;
+}
+
+.toggle-password-icon:hover {
+  color: #262626;
+}
+
+/* Privacy text */
+.privacy-text {
+  text-align: center;
+  font-size: 12px;
+  color: #8e8e8e;
+  margin-bottom: 8px;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  color: #2e7d32;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #1b5e20;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    border: none;
+    box-shadow: none;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  .login-form .logo {
+    width: 140px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form input, .login-form button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
