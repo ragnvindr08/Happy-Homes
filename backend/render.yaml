@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: happy_homes_backend
+    env: python
+    plan: free
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn core.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: "your-secret-key"
+      - key: EMAIL_HOST_USER
+        value: "happyphhomes@gmail.com"
+      - key: EMAIL_HOST_PASSWORD
+        value: "your-app-password"
+    autoDeploy: true
+    branch: main
