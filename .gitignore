@@ -36,3 +36,15 @@ yarn.lock
 # OS
 .DS_Store
 Thumbs.db
+
+backend/env/
+*.pyc
+__pycache__/
+
+# Node / React
+frontend/my-app/node_modules/
+frontend/build/
+
+# VS Code / system
+.vscode/
+.DS_Store
